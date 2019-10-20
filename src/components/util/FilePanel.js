@@ -46,7 +46,7 @@ function FileUploadElement({file, onRemove}) {
   return (
     <div className="file-element" id={file.id} title={file.name}>
       <div className="file-header">
-        {(fileExt === 'asc' || fileExt === 'gpg') && <img src="../../img/Mailvelope/logo_signet.svg" width="28" height="28" />}
+        {(fileExt === 'asc' || fileExt === 'gpg') && <img src="../../img/padlock.png" width="28" height="28" />}
         {fileExt && <span className="file-extension">{fileExt}</span>}
         <span className="file-name">{extractFileNameWithoutExt(file.name)}</span>
         {onRemove && <span title={l10n.map.editor_remove_upload} className="icon icon-close" onClick={() => onRemove(file.id)}></span>}
@@ -82,12 +82,12 @@ function FileDownloadElement({file, onClick, onCopyToClipboard}) {
   return (
     <div className="file-element">
       <a className="file-header" onClick={onClick} title={file.name} download={file.name} href={file.objectURL}>
-        {(fileExt === 'asc' || fileExt === 'gpg') && <img src="../../img/Mailvelope/logo_signet.svg" width="28" height="28" />}
+        {(fileExt === 'asc' || fileExt === 'gpg') && <img src="../../img/padlock.png" width="28" height="28" />}
         <span className="file-extension">{fileExt}</span>
         <span className="file-name">{fileName}</span>
         <span className="icon icon-download"></span>
         {file.onShowPopup &&
-          <button type="button" className="icon-btn ml-1" title={l10n.map.decrypt_open_viewer_btn_title} onClick={e => { e.preventDefault(); file.onShowPopup(); }}><img src="../../img/Mailvelope/logo_signet.svg" width="14" height="14" /></button>
+          <button type="button" className="icon-btn ml-1" title={l10n.map.decrypt_open_viewer_btn_title} onClick={e => { e.preventDefault(); file.onShowPopup(); }}><img src="../../img/padlock.png" width="14" height="14" /></button>
         }
         {file.content &&
           <button type="button" className="icon-btn ml-1" title={l10n.map.key_export_dialog_copy_to_clipboard} onClick={e => { e.preventDefault(); onCopyToClipboard(file.content); }}><span className="icon icon-copy"></span></button>

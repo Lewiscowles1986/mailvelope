@@ -233,7 +233,7 @@ export default class DecryptMessage extends React.Component {
               </div>
             ) : (
               <div className={`locked ${this.state.large ? 'large' : ''} modal-content overflow-hidden shadow-lg border-0 h-100 ${(!this.state.showError && !this.state.waiting) ? 'cursor' : ''}`} onClick={() => this.handleDecrypt()}>
-                <img src="../../img/Mailvelope/logo_signet.svg" />
+                <img src="../../img/padlock.png" />
                 {this.state.waiting ? (
                   <Spinner />
                 ) : (
